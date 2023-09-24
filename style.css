@@ -767,10 +767,12 @@ footer svg:active {
 
 .thank-you h1 {
   font-family: 'Anton', sans-serif;
+  text-align: center;
 }
 
 .thank-you h2 {
-  font-family: 'Slabo 27px, serif'
+  font-family: 'Slabo 27px, serif';
+  text-align: center;
 }
 
 
