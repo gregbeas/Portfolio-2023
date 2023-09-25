@@ -593,6 +593,10 @@ section {
   border-radius: 8px;
 }
 
+.projects-card_back p{
+  padding: 1rem;
+}
+
 .icon-wrapper {
   display: flex;
   gap: 2rem;
@@ -885,7 +889,7 @@ footer svg:active {
   }
 
   .card-wrapper {
-    grid-template-rows: repeat(4, 400px);
+    grid-template-rows: repeat(4, 300px);
     margin-top: 6rem;
     height: auto;
   }
