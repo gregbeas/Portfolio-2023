@@ -422,7 +422,7 @@ section {
 }
 
 .main-section {
-  border: 1px solid var(--color-off-white);
+  /* border: 1px solid var(--color-off-white); */
   padding: 1rem;
   margin-inline: 1rem;
   min-height: 75vh;
@@ -454,8 +454,10 @@ section {
 }
 
 .about-me_profile {
-  padding-top: 3rem;
-  padding-inline: 1.5;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(0,0,0,.5);
+  margin-block: 4rem;
 }
 
 .about-me_aside {
@@ -466,7 +468,7 @@ section {
 }
 
 .about-me_aside h3 {
-  font-size: 32px;
+  font-size: 24px;
   border-bottom: 2px solid var(--color-off-white);
   text-align: center;
 }
@@ -483,6 +485,7 @@ section {
   width: fit-content;
   margin-inline:  auto;
   margin-top: 2rem;
+  margin-bottom: 4rem;
   padding: 1rem;
   border-radius: 8px;
   font-weight: 900;
@@ -498,6 +501,190 @@ section {
 
 .about-me_aside a:hover, .about-me_aside a:active {
   transform: scale(1.05);
+}
+
+.card-wrapper {
+ display: grid;
+ grid-template-columns: repeat(8, 1fr);
+ grid-template-rows: repeat(8, auto);
+ grid-gap: 2rem;
+ position: relative;
+ z-index: 500;
+ width: 100%;
+ max-width: 1500px;
+ margin: 0 auto;
+ height: 90vh;
+}
+
+.flip-card {
+  position: relative;
+  perspective: 1000px;
+  height: 100%;
+  width: 100%;
+  transition: all 300ms ease;
+  border-radius: 8px;
+}
+#flip-card_1 {
+  grid-column: 1 / 5;
+  grid-row: 1 / 5;
+}
+
+#flip-card_2 {
+  grid-column: 5 / 9;
+  grid-row: 2 / 5;
+}
+
+#flip-card_3 {
+  grid-row: 5 / 9;
+  grid-column: 5 / 9;
+}
+
+#flip-card_4 {
+  grid-row: 5 / 8;
+  grid-column: 1 / 5;
+}
+
+.flipped > .projects-card_front {
+  transform: rotateY(-180deg);
+}
+
+.flipped > .projects-card_back {
+  transform: rotateY(0deg);
+}
+
+.flip-card:hover, .flip-card:active {
+  transform: scale(1.02);
+}
+
+.projects-card_front, .projects-card_back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backface-visibility: hidden;
+  background: black;
+  transition: 0.3s;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 10px 2px rgba(254,251,234,0.5);
+  -moz-box-shadow: 0px 0px 10px 2px rgba(254,251,234,0.5);
+  box-shadow: 0px 0px 10px 2px rgba(254,251,234,0.5);
+}
+
+.projects-card_front {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  transition: all 300ms ease;
+}
+
+.projects-card_back {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg);
+  border-radius: 8px;
+}
+
+.icon-wrapper {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2em;
+}
+
+.projects-card_text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.6);
+  backdrop-filter: blur(10px);
+}
+
+.projects-card_back svg {
+  fill: var(--color-off-white);
+  transition: all 500ms ease;
+}
+
+.projects-card_back svg:hover {
+  fill: var(--color-off-white_darker);
+  transform: translateY(-3px);
+}
+
+.projects-card_back svg:active {
+  fill: var(--color-off-white_darker);
+  transform: translateY(-3px);
+}
+
+.projects-card:hover, .projects-card:active {
+  transform: scale(1.02);
+}
+
+#projects-card_1 {
+  background: url(assets/travel-app-screenshot.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+#projects-card_2 {
+  background: url(assets/little-lemon-screeshot.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  grid-area: 2;
+}
+
+#projects-card_3 {
+  background: url(assets/travel-app-screenshot.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  grid-area: 3;
+}
+
+#projects-card_4 {
+  background: url(assets/github-clone-screenshot.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  grid-area: 4;
+}
+
+.projects-card_title {
+  font-size: 32px;
+  width: fit-content;
+  font-family: 'Anton', sans-serif;
+  padding: 1rem;
+}
+
+.projects-card_tools {
+  bottom: 2rem;
+  font-weight: 700;
+  font-size: 18px;
+  font-style: italic;
+}
+
+#more-icon {
+  font-size: 36px;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding-inline: 0.5rem;
+  border-radius: 8px;
+  background: rgba(0,0,0,.5);
+  backdrop-filter: blur(10px);
+}
+
+#close-icon {
+  font-size: 36px;
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
 }
 
 #contact-form {
@@ -622,11 +809,6 @@ footer svg:active {
   .about-me_wrapper {
     grid-template-columns: 1fr;
   }
-
-  .section-title {
-    top: 0;
-    bottom: none;
-  }
 }
 
 @media only screen and (max-width: 905px) {
@@ -700,6 +882,37 @@ footer svg:active {
 
   #about-me, #projects, #resume, #contact-me {
     scroll-margin-top: 4.5rem;
+  }
+
+  .card-wrapper {
+    grid-template-rows: repeat(4, 400px);
+    margin-top: 6rem;
+    height: auto;
+  }
+
+  #flip-card_1 {
+    grid-column: 1 / 9;
+    grid-row: 1 / 2;
+  }
+
+  #flip-card_2 {
+    grid-column: 1 / 9;
+    grid-row: 2 / 3;
+  }
+
+  #flip-card_3 {
+    grid-column: 1 / 9;
+    grid-row: 3 / 4;
+  }
+
+  #flip-card_4 {
+    grid-column: 1 / 9;
+    grid-row: 4 / 5;
+  }
+
+  .section-title {
+    top: 0;
+    bottom: none;
   }
 }
 

@@ -26,5 +26,18 @@ navLinks.forEach(link => link.addEventListener('click', () => {
   // console.log('nav link clicked')
 }))
 
-//CONTACT FORM
+//FLIP CARDS
+
+const cards = document.querySelectorAll('.flip-card');
+
+cards.forEach(card =>  card.addEventListener('click', () => {
+
+  if (card.classList.contains('flipped')) {
+    card.classList.remove('flipped');
+  } else {
+    card.classList.add('flipped');
+  }
+
+}))
+
 
