@@ -479,6 +479,7 @@ section {
   gap: 2rem;
   grid-template-columns: auto;
   margin-top: 1.5rem;
+  font-size: 18px;
 }
 
 .about-me_aside a {
