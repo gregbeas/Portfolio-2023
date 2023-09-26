@@ -480,6 +480,7 @@ section {
   grid-template-columns: auto;
   margin-top: 1.5rem;
   font-size: 18px;
+  list-style-type:circle;
 }
 
 .about-me_aside a {
@@ -610,7 +611,7 @@ section {
   width: 100%;
   align-items: center;
   justify-content: center;
-  background: rgba(0,0,0,.6);
+  background: rgba(0,0,0,.5);
   backdrop-filter: blur(10px);
 }
 
